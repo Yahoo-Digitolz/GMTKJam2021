@@ -78,7 +78,7 @@ public class PlayerMovement : MonoBehaviour
         _direction = Vector2.right * _horizontalInput;
         FlipPlayer();
         
-        if (Input.GetButtonDown("Jump"))
+        if (Input.GetButtonDown("Jump") && IsGrounded())
         {
             _isJumpTrigger = true;
             _audioSource.PlayOneShot(_jumpClip);
