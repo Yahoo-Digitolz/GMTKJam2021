@@ -115,14 +115,14 @@ public class PlayerMovement : MonoBehaviour
         }
     }
     // ramasser un item en passant dessus et incrémente le score
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.CompareTag("Item"))
-        {
-            Destroy(other.gameObject);
-            _audioSource.PlayOneShot(_itemClip);
-        }
-    }
+    //private void OnTriggerEnter2D(Collider2D other)
+    //{
+    //    if (other.CompareTag("Item"))
+    //    {
+    //        Destroy(other.gameObject);
+    //        _audioSource.PlayOneShot(_itemClip);
+    //    }
+    //}
     #endregion
 
     #region --- Gizmos ---
@@ -175,5 +175,3 @@ public class PlayerMovement : MonoBehaviour
     private int _jumps;
     private bool _isJumpTrigger;
 }
-
-

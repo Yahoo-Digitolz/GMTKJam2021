@@ -325,7 +325,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1084574069}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -967, y: -379, z: 0}
+  m_LocalPosition: {x: 0, y: 1.54, z: 0}
   m_LocalScale: {x: 21.538, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1558591177}
@@ -453,6 +453,7 @@ GameObject:
   - component: {fileID: 1390895644}
   - component: {fileID: 1390895648}
   - component: {fileID: 1390895647}
+  - component: {fileID: 1390895649}
   m_Layer: 0
   m_Name: PlayerCharacter
   m_TagString: Untagged
@@ -586,11 +587,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d2f831a8914e4981971a90fddc573e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <_horizontalMovement>k__BackingField: 0
-  <_jump>k__BackingField: 0
-  <_playerInteraction>k__BackingField: 0
-  <_isMoving>k__BackingField: 0
-  <_isJumping>k__BackingField: 0
 --- !u!114 &1390895647
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -605,7 +601,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _fallMultiplier: 2.5
   _lowJumpMultiplier: 2
-  _rb: {fileID: 0}
 --- !u!114 &1390895648
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -623,6 +618,7 @@ MonoBehaviour:
   _topLeft: {fileID: 2048302285}
   _bottomRight: {fileID: 1330726570}
   _whatIsGround:
+    serializedVersion: 2
     m_Bits: 64
   _movementSpeed: 10
   _jumpForce: 10
@@ -630,10 +626,19 @@ MonoBehaviour:
   _audioSource: {fileID: 0}
   _jumpClip: {fileID: 0}
   _itemClip: {fileID: 0}
-  _direction: {x: 0, y: 0}
-  _horizontalInput: 0
-  _jumps: 0
-  _isJumpTrigger: 0
+--- !u!114 &1390895649
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1390895641}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 135985f30135342ada7b6d961df74c01, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _playerTransform: {fileID: 1390895643}
 --- !u!1 &1558591176
 GameObject:
   m_ObjectHideFlags: 0
@@ -658,7 +663,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1558591176}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 967.679, y: 380.59293, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1084574070}

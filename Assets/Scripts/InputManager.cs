@@ -15,7 +15,7 @@ public class InputManager : MonoBehaviour
     {
         _horizontalMovement = Input.GetAxis("Horizontal");
         _jump = Input.GetAxis("Vertical");
-        _playerInteraction = Input.GetButton("Use");
+        _playerInteraction = Input.GetButtonDown("Use");
         _isJumping = Input.GetKeyDown(KeyCode.Z);
         _isMoving = Input.GetKey(KeyCode.Q) || Input.GetKey(KeyCode.D);
     }
