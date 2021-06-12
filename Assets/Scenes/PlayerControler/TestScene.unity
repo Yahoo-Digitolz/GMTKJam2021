@@ -568,6 +568,11 @@ MonoBehaviour:
   _playerRigidbody2D: {fileID: 1390895645}
   _playerSpeed: 8
   _jumpStrength: 5
+  _jumpGravity: 0
+  _floatingJumpGravity: 0
+  _fallGravity: 0
+  _triggerJump: 0
+  _jumpAllowed: 0
 --- !u!1 &1558591176
 GameObject:
   m_ObjectHideFlags: 0
