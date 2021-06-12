@@ -7,6 +7,7 @@ public class Rope : MonoBehaviour
     [SerializeField] Rigidbody2D _hook;
     [SerializeField] GameObject[] _prefabRopeSegs;
     [SerializeField] int _numLinks = 5;
+    [SerializeField] ALinkToTheFool _aLinkToTheFool;
 
     private void Start()
     {
@@ -26,7 +27,16 @@ public class Rope : MonoBehaviour
             HingeJoint2D hj = newSeg.GetComponent<HingeJoint2D>();
             hj.connectedBody = prevBod;
 
-            prevBod = newSeg.GetComponent<Rigidbody2D>();
+            if(i < _numLinks - 1)
+            {
+                prevBod = newSeg.GetComponent<Rigidbody2D>();
+            }
+            else
+            {
+                _aLinkToTheFool.ConnectRopeEnd(prevBod.GetComponent<Rigidbody2D>());
+            }
+
+            
         }
     }
 }
