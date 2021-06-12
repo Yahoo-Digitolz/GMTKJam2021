@@ -69,12 +69,12 @@ public class PlayerController : MonoBehaviour
 
     public void JumpInput()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && _isOnTheGround.IsOnTheGround())
+        if (Input.GetButtonDown("Jump") && _isOnTheGround.IsOnTheGround())
         {
             _triggerJump = true;
         }
 
-        else if (Input.GetKeyDown(KeyCode.Space) && _jumpCount > 0)
+        else if (Input.GetButtonDown("Jump") && _jumpCount > 0)
         {
             _triggerJump = true;
             _jumpCount--;
@@ -83,8 +83,10 @@ public class PlayerController : MonoBehaviour
 
     private void DoJump()
     {
-        _playerRigidbody2D.velocity = new Vector2(_playerRigidbody2D.velocity.x, _jumpStrength);
+        _jumpVelocity = Vector2.up * _jumpStrength;
+        _jumpVelocity.x = _playerRigidbody2D.velocity.x;
         _triggerJump = false;
+        _playerRigidbody2D.velocity = _jumpVelocity;
     }
 
     private void PlayerInteraction()
@@ -111,6 +113,7 @@ public class PlayerController : MonoBehaviour
 
     #region Private
     private Vector2 _movementVelocity;
+    private Vector2 _jumpVelocity;
 
     private InputManager _inputManager;
     private CheckGround _isOnTheGround;
