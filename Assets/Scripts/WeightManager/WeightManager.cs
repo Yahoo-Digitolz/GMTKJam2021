@@ -141,7 +141,8 @@ public class WeightManager : MonoBehaviour
         {
             case Weights.LIGHT:
                 {
-                    _objectCollidedWith.gameObject.transform.SetParent(_playerTransform);
+                    _objectCollidedWith.gameObject.transform.root.SetParent(_playerTransform);
+                    _objectCollidedWith.gameObject.GetComponentInParent<Rigidbody2D>().isKinematic = true;
                     _hasObject = true;
                     break;
                 }
@@ -161,7 +162,6 @@ public class WeightManager : MonoBehaviour
             default:
                 break;
         }
-
     }
 
     public void DropObject(Weights weight)
@@ -172,6 +172,7 @@ public class WeightManager : MonoBehaviour
                 {
                     Debug.Log("Drop light object");
                     _childs[_child].transform.SetParent(null);
+                    _childs[_child].gameObject.GetComponent<Rigidbody2D>().isKinematic = false;
                     _hasObject = false;
                     break;
                 }
