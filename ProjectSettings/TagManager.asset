@@ -4,7 +4,13 @@
 TagManager:
   serializedVersion: 2
   tags:
+<<<<<<< HEAD
+  - LightWeight
+  - MediumWeight
+  - HeavyWeight
+=======
   - Moving Platform
+>>>>>>> main
   layers:
   - Default
   - TransparentFX
@@ -13,9 +19,15 @@ TagManager:
   - Water
   - UI
   - Ground
+<<<<<<< HEAD
+  - Obstacle
+  - 
+  - 
+=======
   - Wall
   - Boss
   - Rope
+>>>>>>> main
   - 
   - 
   - 
