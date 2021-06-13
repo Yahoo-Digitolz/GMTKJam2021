@@ -7,7 +7,7 @@ public class BossBehaviour : MonoBehaviour
     #region Show In Inspector
 
     [SerializeField] private float _speed;
-    [SerializeField] private AnimatorController _animatorController;
+    [SerializeField] private AnimationController _animatorController;
 
     [Header("Detections")]
     [SerializeField] private Transform _wallDetection;
