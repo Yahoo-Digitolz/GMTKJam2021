@@ -316,11 +316,11 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 20
+  m_Mass: 10
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 5613e14bdd9096e41886ae47c4c29680, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
@@ -334,7 +334,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 268766287}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 41c0d077c7d0f4efda0b52d847c99bc0, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -363,9 +363,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c27a7378829a9041bd6a841791242b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 5
+  _speed: 2
   _wallDetection: {fileID: 696649561}
-  _wallDetectionDistance: 0.7
+  _wallDetectionDistance: 1.49
   _whatIsWall:
     serializedVersion: 2
     m_Bits: 128
@@ -734,7 +734,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1066879705}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -912.7, y: -374.61, z: 0}
+  m_LocalPosition: {x: -912.7, y: -374.81, z: 0}
   m_LocalScale: {x: 1.3067, y: 7.9595594, z: 1}
   m_Children: []
   m_Father: {fileID: 208148358}
@@ -847,7 +847,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 1622608434}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 41c0d077c7d0f4efda0b52d847c99bc0, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -880,7 +880,7 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 5613e14bdd9096e41886ae47c4c29680, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0

@@ -26,7 +26,7 @@ public class Rope : MonoBehaviour
             newSeg.transform.parent = transform;
             newSeg.transform.position = transform.position;
             HingeJoint2D hingeJoint = newSeg.GetComponent<HingeJoint2D>();
-            SpringJoint2D distanceJoint = newSeg.GetComponent<SpringJoint2D>();
+            DistanceJoint2D distanceJoint = newSeg.GetComponent<DistanceJoint2D>();
             hingeJoint.connectedBody = prevBod;
             distanceJoint.connectedBody = prevBod;
 
