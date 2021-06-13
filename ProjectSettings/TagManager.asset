@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - Moving Platform
+  - LightWeight
+  - MediumWeight
+  - HeavyWeight
   layers:
   - Default
   - TransparentFX
@@ -16,7 +19,7 @@ TagManager:
   - Boss
   - Rope
   - Ground
-  - 
+  - Obstacle
   - 
   - 
   - 
