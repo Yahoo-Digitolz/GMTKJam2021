@@ -66,11 +66,12 @@ public class PlayerMovement : MonoBehaviour
     }
     #endregion
 
-    private void Start()
+    #region Init
+    private void Awake()
     {
-        _audioSource = GetComponent<AudioSource>();
+        _weightManager = GetComponent<WeightManager>(); 
     }
-
+    #endregion
     // Update is called once per frame
     private void Update()
     {
@@ -81,7 +82,6 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetButtonDown("Jump") && IsGrounded())
         {
             _isJumpTrigger = true;
-            _audioSource.PlayOneShot(_jumpClip);
         }
 
         //Debug.Log($"Sauts suplémentaires  = {_jumps}");
@@ -163,9 +163,12 @@ public class PlayerMovement : MonoBehaviour
     // retourner le joueur sur l'axe y quand on change de direction
     private void FlipPlayer()
     {
-        if (_horizontalInput > 0.01f || _horizontalInput < -0.01f)
+        if (_weightManager._canMove)
         {
-            transform.right = _direction;
+            if (_horizontalInput > 0.01f || _horizontalInput < -0.01f)
+            {
+                transform.right = _direction;
+            }
         }
     }
     #endregion
@@ -174,4 +177,5 @@ public class PlayerMovement : MonoBehaviour
     private float _horizontalInput;
     private int _jumps;
     private bool _isJumpTrigger;
+    private WeightManager _weightManager;
 }
