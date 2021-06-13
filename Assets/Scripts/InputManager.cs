@@ -13,11 +13,11 @@ public class InputManager : MonoBehaviour
     #region Update
     private void Update()
     {
-        _horizontalMovement = Input.GetAxis("Horizontal");
+        _horizontalMovement = Input.GetAxisRaw("Horizontal");
         _jump = Input.GetAxis("Vertical");
-        _playerInteraction = Input.GetButton("Use");
+        _playerInteraction = Input.GetButtonDown("Use");
         _isJumping = Input.GetKeyDown(KeyCode.Z);
-        _isMoving = Input.GetKey(KeyCode.Q) || Input.GetKey(KeyCode.D);
+        _isMoving = Mathf.Abs(Input.GetAxisRaw("Horizontal")) > 0f;
     }
     #endregion
 }
