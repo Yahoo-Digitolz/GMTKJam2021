@@ -3,8 +3,8 @@ using UnityEngine;
 public class AnimationController : MonoBehaviour
 {
     [SerializeField] private Animator _animator;
-    public PlayerMovement _playerMovement;
-    [SerializeField] private LayerMask _whatIsGround;
+    //public PlayerMovement _playerMovement;
+    //[SerializeField] private LayerMask _whatIsGround;
 
     /// <summary>
     /// Active ou d?sactive le bool?en du jump dans l'animator
