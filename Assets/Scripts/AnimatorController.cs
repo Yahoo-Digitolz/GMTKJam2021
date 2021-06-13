@@ -4,8 +4,8 @@ using UnityEngine;
 public class AnimatorController : MonoBehaviour
 {
     [SerializeField] private Animator _animator;
-    public PlayerMovement _playerMovement;
-    [SerializeField] private LayerMask _whatIsGround;
+    //public PlayerMovement _playerMovement;
+    //[SerializeField] private LayerMask _whatIsGround;
 
     /// <summary>
     /// Active ou désactive le booléen du jump dans l'animator

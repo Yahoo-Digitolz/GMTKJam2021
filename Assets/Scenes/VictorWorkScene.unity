@@ -538,9 +538,11 @@ GameObject:
   m_Component:
   - component: {fileID: 268766288}
   - component: {fileID: 268766291}
+  - component: {fileID: 268766294}
   - component: {fileID: 268766290}
   - component: {fileID: 268766289}
   - component: {fileID: 268766292}
+  - component: {fileID: 268766293}
   m_Layer: 8
   m_Name: Boss
   m_TagString: Moving Platform
@@ -625,6 +627,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speed: 7
+  _animatorController: {fileID: 268766294}
   _wallDetection: {fileID: 696649561}
   _wallDetectionDistance: 1.76
   _whatIsWall:
@@ -642,6 +645,38 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1da00f8e65901ee4ebb2192983ad5f66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &268766293
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 268766287}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &268766294
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 268766287}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1ab482f674451c40a8b432495dc6abb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _animator: {fileID: 1776669732}
 --- !u!1 &270475611
 GameObject:
   m_ObjectHideFlags: 0

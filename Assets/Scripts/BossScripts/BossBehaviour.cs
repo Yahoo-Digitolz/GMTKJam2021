@@ -7,6 +7,7 @@ public class BossBehaviour : MonoBehaviour
     #region Show In Inspector
 
     [SerializeField] private float _speed;
+    [SerializeField] private AnimatorController _animatorController;
 
     [Header("Detections")]
     [SerializeField] private Transform _wallDetection;
@@ -57,6 +58,7 @@ public class BossBehaviour : MonoBehaviour
                 _direction = 1;
             }
         }
+        _animatorController.AnimatorWalk(true);
     }
 
     private bool WallDetected()
