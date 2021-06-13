@@ -174,7 +174,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 60
+  field of view: 107
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -200,7 +200,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 67623349}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.92, z: -10}
+  m_LocalPosition: {x: 21.65, y: 1.92, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -558,7 +558,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 268766287}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.01, y: 3.05, z: 0}
+  m_LocalPosition: {x: 4.01, y: 3.619, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1776669731}
@@ -582,7 +582,7 @@ Rigidbody2D:
   m_Mass: 20
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 2
   m_Material: {fileID: 6200000, guid: 5613e14bdd9096e41886ae47c4c29680, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -626,7 +626,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c27a7378829a9041bd6a841791242b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 7
+  _speed: 2
   _animatorController: {fileID: 268766294}
   _wallDetection: {fileID: 696649561}
   _wallDetectionDistance: 1.76
@@ -723,7 +723,7 @@ MonoBehaviour:
   _hook: {fileID: 1622608436}
   _prefabRopeSegs:
   - {fileID: 1508373224747906211, guid: b9d781af850dcc748b82459b95f0eddc, type: 3}
-  _numLinks: 50
+  _numLinks: 20
   _aLinkToTheFool: {fileID: 268766292}
   _maxDistanceBetweenRopeChunk: 0
 --- !u!1 &452117387
@@ -1994,10 +1994,10 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 3
+  m_Mass: 5
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 5
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1

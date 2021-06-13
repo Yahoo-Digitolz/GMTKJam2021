@@ -29,7 +29,7 @@ public class Rope : MonoBehaviour
             DistanceJoint2D distanceJoint = newSeg.GetComponent<DistanceJoint2D>();
             hingeJoint.connectedBody = prevBod;
             distanceJoint.connectedBody = prevBod;
-
+            newSeg.layer = 9;
             
 
             if(i < _numLinks - 1)
