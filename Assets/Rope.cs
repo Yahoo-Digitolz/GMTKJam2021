@@ -8,6 +8,7 @@ public class Rope : MonoBehaviour
     [SerializeField] GameObject[] _prefabRopeSegs;
     [SerializeField] int _numLinks = 5;
     [SerializeField] ALinkToTheFool _aLinkToTheFool;
+    [SerializeField] float _maxDistanceBetweenRopeChunk;
 
     private void Start()
     {
@@ -24,8 +25,12 @@ public class Rope : MonoBehaviour
             GameObject newSeg = Instantiate(_prefabRopeSegs[index]);
             newSeg.transform.parent = transform;
             newSeg.transform.position = transform.position;
-            HingeJoint2D hj = newSeg.GetComponent<HingeJoint2D>();
-            hj.connectedBody = prevBod;
+            HingeJoint2D hingeJoint = newSeg.GetComponent<HingeJoint2D>();
+            SpringJoint2D distanceJoint = newSeg.GetComponent<SpringJoint2D>();
+            hingeJoint.connectedBody = prevBod;
+            distanceJoint.connectedBody = prevBod;
+
+            
 
             if(i < _numLinks - 1)
             {
