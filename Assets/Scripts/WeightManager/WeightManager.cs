@@ -13,7 +13,7 @@ public enum Weights
 public class WeightManager : MonoBehaviour
 {
     #region In Inspector
-    public Transform _playerTransform;
+    public Transform _targetTransform;
     public bool _canMove { get; private set; }
     [SerializeField] private LayerMask _obstacleLayer;
     #endregion
@@ -141,15 +141,18 @@ public class WeightManager : MonoBehaviour
         {
             case Weights.LIGHT:
                 {
-                    _objectCollidedWith.gameObject.transform.root.SetParent(_playerTransform);
+                    Transform objectTransform = _objectCollidedWith.GetComponentInParent<Transform>();
+                    _objectCollidedWith.gameObject.transform.parent.SetParent(_targetTransform);
+                    objectTransform.position = objectTransform.InverseTransformVector(Vector2.zero);
                     _objectCollidedWith.gameObject.GetComponentInParent<Rigidbody2D>().isKinematic = true;
                     _hasObject = true;
+                    
                     break;
                 }
             case Weights.MEDIUM:
                 {
-                    _playerTransform.gameObject.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
-                    _objectCollidedWith.gameObject.transform.SetParent(_playerTransform);
+                    _targetTransform.gameObject.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
+                    _objectCollidedWith.gameObject.transform.SetParent(_targetTransform);
                     _hasObject = true;
                     _canMove = false;
                     break;
@@ -179,7 +182,7 @@ public class WeightManager : MonoBehaviour
             case Weights.MEDIUM:
                 {
                     Debug.Log("Drop medium object");
-                    _playerTransform.gameObject.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
+                    _targetTransform.gameObject.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
                     _childs[_child].transform.SetParent(null);
                     _canMove = true;
                     _hasObject = false;
