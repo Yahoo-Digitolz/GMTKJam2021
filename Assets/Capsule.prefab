@@ -99,15 +99,15 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 0.06
-  m_LinearDrag: 0.2
-  m_AngularDrag: 0.2
+  m_Mass: 0.08
+  m_LinearDrag: 0
+  m_AngularDrag: 0
   m_GravityScale: 1
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 4
+  m_Constraints: 0
 --- !u!233 &4863700074749410254
 HingeJoint2D:
   m_ObjectHideFlags: 0
@@ -131,7 +131,7 @@ HingeJoint2D:
   m_UseLimits: 1
   m_AngleLimits:
     m_LowerAngle: 0
-    m_UpperAngle: 359
+    m_UpperAngle: 60
 --- !u!114 &8375674450371952139
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -179,5 +179,5 @@ DistanceJoint2D:
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0, y: 0}
   m_AutoConfigureDistance: 0
-  m_Distance: 1
+  m_Distance: 0.1
   m_MaxDistanceOnly: 1
