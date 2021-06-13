@@ -88,9 +88,6 @@ public class PlayerMovement : MonoBehaviour
             _animationController.AnimatorVelocityY(GetVerticalSpeed());
         
             _animationController.AnimatorExitJump(IsGrounded());
-            
-        
-        Debug.Log($"Sauts suplémentaires  = {_jumps}");
     }
 
     private void FixedUpdate()
