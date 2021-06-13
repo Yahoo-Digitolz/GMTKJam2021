@@ -31,41 +31,52 @@ public class WeightManager : MonoBehaviour
     {
         //HasObject();
 
-        if (_hasObject && _inputManager._playerInteraction)
+        if (_objectCollidedWith != null && _objectCollidedWith.CompareTag("LightWeight") && !_hasObject && _inputManager._playerInteraction)
         {
-            Debug.Log("Qui est le père ?");
+            LiftObject(Weights.LIGHT);
+            return;
+        }
+
+        if (_objectCollidedWith != null && _objectCollidedWith.CompareTag("MediumWeight") && !_hasObject && _inputManager._playerInteraction)
+        {
+            LiftObject(Weights.MEDIUM);
+            return;
+        }
+
+        if (_objectCollidedWith != null && _hasObject && _inputManager._playerInteraction)
+        {
             AbandonChild();
         }
     }
     #endregion
 
-    private void OnTriggerStay2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (_inputManager._playerInteraction && !_hasObject)
-        {
-            Debug.Log("zob");
-            if (collision.gameObject.CompareTag("LightWeight"))
-            {
-                _objectCollidedWith = collision;
-                LiftObject(Weights.LIGHT);
-                Debug.Log("Players hands are full");
-                return;
-            }
+        //if (_inputManager._playerInteraction && !_hasObject)
+        //{
+        //if (collision.gameObject.CompareTag("LightWeight"))
+        //{
+            _objectCollidedWith = collision;
+        //}
+            //    //LiftObject(Weights.LIGHT);
+            //    //Debug.Log("Players hands are full");
+            //    return;
+            //}
 
-            else if (collision.gameObject.CompareTag("MediumWeight"))
-            {
-                _objectCollidedWith = collision;
-                LiftObject(Weights.MEDIUM);
-                return;
-            }
+            //else if (collision.gameObject.CompareTag("MediumWeight"))
+            //{
+            //    _objectCollidedWith = collision;
+            //    //LiftObject(Weights.MEDIUM);
+            //    return;
+            //}
 
-            else if (collision.CompareTag("HeavyWeight"))
-            {
-                _objectCollidedWith = collision;
-                LiftObject(Weights.HEAVY);
-                return;
-            }
-        }
+            //else if (collision.CompareTag("HeavyWeight"))
+            //{
+            //    _objectCollidedWith = collision;
+            //    //LiftObject(Weights.HEAVY);
+            //    return;
+            //}
+        //}
 
         //else if(_inputManager._playerInteraction && _hasObject)
         //{
@@ -101,7 +112,7 @@ public class WeightManager : MonoBehaviour
     {
         _childs = gameObject.GetComponentsInChildren<Transform>();
         Debug.Log("Kek");
-        
+
         for (_child = 0; _child <= _childs.Length; _child++)
         {
             if (_childs[_child].CompareTag("LightWeight"))
@@ -159,14 +170,16 @@ public class WeightManager : MonoBehaviour
         {
             case Weights.LIGHT:
                 {
-                    _childs[_child].SetParent(null);
+                    Debug.Log("Drop light object");
+                    _childs[_child].transform.SetParent(null);
                     _hasObject = false;
                     break;
                 }
             case Weights.MEDIUM:
                 {
+                    Debug.Log("Drop medium object");
                     _playerTransform.gameObject.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
-                    _childs[_child].SetParent(null);
+                    _childs[_child].transform.SetParent(null);
                     _canMove = true;
                     _hasObject = false;
                     break;
@@ -179,7 +192,6 @@ public class WeightManager : MonoBehaviour
             default:
                 break;
         }
-
     }
 
     //public void HasObject()
