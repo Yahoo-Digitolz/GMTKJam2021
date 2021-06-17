@@ -15,6 +15,8 @@ public class WeightManager : MonoBehaviour
     #region In Inspector
     public Transform _targetTransform;
     public bool _canMove { get; private set; }
+
+    public bool _hasObject;
     [SerializeField] private LayerMask _obstacleLayer;
     #endregion
 
@@ -142,8 +144,9 @@ public class WeightManager : MonoBehaviour
             case Weights.LIGHT:
                 {
                     Transform objectTransform = _objectCollidedWith.GetComponentInParent<Transform>();
+
                     _objectCollidedWith.gameObject.transform.parent.SetParent(_targetTransform);
-                    objectTransform.position = objectTransform.InverseTransformVector(Vector2.zero);
+                    objectTransform.parent.position = objectTransform.InverseTransformVector(_targetTransform.position);
                     _objectCollidedWith.gameObject.GetComponentInParent<Rigidbody2D>().isKinematic = true;
                     _hasObject = true;
                     
@@ -212,7 +215,6 @@ public class WeightManager : MonoBehaviour
     #region Private
     private Collider2D _objectCollidedWith;
     private InputManager _inputManager;
-    private bool _hasObject;
     private Transform[] _childs;
     private int _child;
     #endregion
