@@ -46,6 +46,6 @@ MonoBehaviour:
   _hook: {fileID: 0}
   _prefabRopeSegs:
   - {fileID: 1508373224747906211, guid: b9d781af850dcc748b82459b95f0eddc, type: 3}
-  _numLinks: 20
+  _numLinks: 50
   _aLinkToTheFool: {fileID: 0}
   _maxDistanceBetweenRopeChunk: 0
