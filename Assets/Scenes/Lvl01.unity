@@ -2739,6 +2739,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerCharacter
       objectReference: {fileID: 0}
+    - target: {fileID: 5380884646403546007, guid: edc9852dda109284188c6f8f0faa9965, type: 3}
+      propertyPath: m_Mass
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5380884646403546007, guid: edc9852dda109284188c6f8f0faa9965, type: 3}
+      propertyPath: m_GravityScale
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: edc9852dda109284188c6f8f0faa9965, type: 3}
 --- !u!1001 &7788585254739961580
@@ -2799,6 +2807,10 @@ PrefabInstance:
     - target: {fileID: 7788585255008201404, guid: deb0d782dec167e4c86306742d1b0eb2, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7788585255008201405, guid: deb0d782dec167e4c86306742d1b0eb2, type: 3}
+      propertyPath: m_Mass
+      value: 50
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: deb0d782dec167e4c86306742d1b0eb2, type: 3}
